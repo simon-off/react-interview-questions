@@ -1,7 +1,8 @@
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import { Binary, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import useWindowResize from "../hooks/useWindowResize";
+import { challengeRoutes } from "../data/challengeRoutes";
 
 export default function Layout() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -28,10 +29,10 @@ export default function Layout() {
   return (
     <>
       <header ref={headerRef}>
-        <Link to="/">
+        <NavLink to="/">
           <Binary />
           React Interview Questions
-        </Link>
+        </NavLink>
         <div>
           <button onClick={() => setMenuOpen(!menuOpen)}>
             <Menu />
@@ -47,21 +48,24 @@ export default function Layout() {
       <main>
         <aside className={menuOpen ? "open" : ""} style={{ top: headerHeight }}>
           <h2>
-            Questions
+            Challenges
             <button onClick={() => setMenuOpen(false)}>
               <X />
             </button>
           </h2>
-          <nav>
-            <Link to="/">Transfer List</Link>
-            <Link to="/blogs">Country Game</Link>
-            <Link to="/blogs">blogs</Link>
-            <Link to="/blogs">LAST</Link>
+          <nav className="text-subtle">
+            {challengeRoutes.map((link) => (
+              <NavLink to={link.to} onClick={() => setMenuOpen(false)}>
+                {link.text}
+              </NavLink>
+            ))}
           </nav>
         </aside>
         <div
           onClick={() => setMenuOpen(false)}
-          className={`container page-content ${menuOpen ? "open" : ""}`}
+          className={`text-subtle container page-content ${
+            menuOpen ? "open" : ""
+          }`}
         >
           <Outlet />
         </div>
