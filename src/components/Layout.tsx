@@ -55,7 +55,11 @@ export default function Layout() {
           </h2>
           <nav className="text-subtle">
             {challengeRoutes.map((link) => (
-              <NavLink to={link.to} onClick={() => setMenuOpen(false)}>
+              <NavLink
+                key={link.to}
+                to={link.to}
+                onClick={() => setMenuOpen(false)}
+              >
                 {link.text}
               </NavLink>
             ))}

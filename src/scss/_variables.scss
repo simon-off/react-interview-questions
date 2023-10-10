@@ -1,15 +1,21 @@
 :root {
-  --color-text: #ededed;
-  --color-text-subtle: hsl(195, 15%, 70%);
-  --color-background: #161718;
-  --color-border: #272c31;
-  --color-primary: hsl(195, 80%, 45%);
-  --color-secondary: #152d3c;
-  --color-accent: #e47221;
+  --color-text: hsl(0, 0%, 93%);
+  --color-text-subtle: hsl(203, 15%, 70%);
+  --color-background: hsl(203, 10%, 9%);
+  --color-background-light: hsl(203, 10%, 12%);
+  --color-border: hsl(203, 11%, 17%);
+  --color-primary: hsl(203, 80%, 45%);
+  --color-secondary: hsl(203, 40%, 15%);
+  --color-secondary-border: hsl(203, 40%, 25%);
+  --color-accent: hsl(25, 78%, 51%);
 
   --time-fast: 100ms;
   --time-medium: 200ms;
   --time-slow: 400ms;
 
   --timing-function: ease;
+  --prem: 1rem;
+  @media (max-width: 500px) {
+    --prem: 0.75rem;
+  }
 }

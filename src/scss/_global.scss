@@ -17,11 +17,17 @@ h3,
 h4,
 h5,
 h6 {
+  margin-bottom: 1rem;
   line-height: normal;
 }
 
 h1 {
   font-size: 2.5rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
 }
 
 button {
@@ -47,7 +53,7 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   & > header {
-    padding: 1.5rem 2rem;
+    padding: 1.5rem calc(var(--prem) * 2);
     border-bottom: 1px solid var(--color-border);
     display: flex;
     flex-direction: column;
@@ -92,7 +98,7 @@ main {
 
 aside {
   background-color: var(--color-background);
-  padding: 2rem;
+  padding: calc(var(--prem) * 2);
   position: fixed;
   left: -100%;
   bottom: 0;
@@ -148,7 +154,7 @@ section {
 .container {
   max-width: 1000px;
   margin-inline: auto;
-  padding-inline: 2rem;
+  padding-inline: calc(var(--prem) * 2);
   width: 100%;
 }
 
@@ -157,7 +163,7 @@ section {
   padding-top: 2rem;
   height: 100%;
   &.open {
-    filter: blur(4px) brightness(0.5);
+    filter: blur(4px) opacity(0.5);
   }
 }
 

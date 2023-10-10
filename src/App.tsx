@@ -11,7 +11,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           {challengeRoutes.map((route) => (
-            <Route path={route.to} element={route.element} />
+            <Route key={route.to} path={route.to} element={route.element} />
           ))}
           <Route path="*" element={<h1>Nothing to see here...</h1>} />
         </Route>
