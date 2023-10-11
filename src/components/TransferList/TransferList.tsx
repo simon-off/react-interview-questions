@@ -13,10 +13,9 @@ const defaultItems = new Array(4).fill(null).map((_, i): Item => {
   return { label: i, checked: false, location: "LEFT" };
 });
 
-const UNCHECK_ON_MOVE = false;
-
 export default function TransferList() {
   const [items, setItems] = useState<Item[]>(defaultItems);
+  const [uncheckOnMove, setUncheckOnMove] = useState(false);
 
   const handleButtonClick = (moveTo: Location) => {
     setItems(
@@ -26,7 +25,7 @@ export default function TransferList() {
               ...item,
               location: moveTo,
               checked:
-                item.location !== moveTo && UNCHECK_ON_MOVE
+                item.location !== moveTo && uncheckOnMove
                   ? false
                   : item.checked,
             }
@@ -47,30 +46,48 @@ export default function TransferList() {
   return (
     <article>
       <h1>Transfer List</h1>
+
       <section className="transfer-list">
-        <ul>
-          {items.map(
-            (item, i) =>
-              item.location === "LEFT" && (
-                <ListItem key={i} item={item} handleCheck={handleCheck} />
-              )
-          )}
-        </ul>
-        <ul>
-          {items.map(
-            (item, i) =>
-              item.location === "RIGHT" && (
-                <ListItem key={i} item={item} handleCheck={handleCheck} />
-              )
-          )}
-        </ul>
-        <div>
-          <button onClick={() => handleButtonClick("RIGHT")}>
-            <ChevronRight />
-          </button>
-          <button onClick={() => handleButtonClick("LEFT")}>
-            <ChevronLeft />
-          </button>
+        <div className="settings">
+          <label htmlFor="uncheck-on-move-toggle">Uncheck on transfer</label>
+          <div>
+            <span>{uncheckOnMove ? "on" : "off"}</span>
+            <label className="switch">
+              <input
+                id="uncheck-on-move-toggle"
+                type="checkbox"
+                checked={uncheckOnMove}
+                onChange={(e) => setUncheckOnMove(e.target.checked)}
+              />
+              <span className="slider round" />
+            </label>
+          </div>
+        </div>
+        <div className="game">
+          <ul>
+            {items.map(
+              (item, i) =>
+                item.location === "LEFT" && (
+                  <ListItem key={i} item={item} handleCheck={handleCheck} />
+                )
+            )}
+          </ul>
+          <ul>
+            {items.map(
+              (item, i) =>
+                item.location === "RIGHT" && (
+                  <ListItem key={i} item={item} handleCheck={handleCheck} />
+                )
+            )}
+          </ul>
+          <div>
+            <button onClick={() => handleButtonClick("RIGHT")}>
+              <ChevronRight />
+            </button>
+            <button onClick={() => handleButtonClick("LEFT")}>
+              <ChevronLeft />
+            </button>
+          </div>
         </div>
       </section>
     </article>
