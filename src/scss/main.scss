@@ -1,7 +1,10 @@
-@use "reset";
-@use "variables";
-@use "global";
+@use "core/reset";
+@use "core/variables";
+@use "core/global";
 
-@use "challenges";
+@use "components/header";
+@use "components/aside";
+@use "components/toggle-switch";
+@use "components/folding-section";
 
-@use "components";
+@use "challenges/transfer-list";

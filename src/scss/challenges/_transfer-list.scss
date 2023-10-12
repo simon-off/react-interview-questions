@@ -1,7 +1,29 @@
-.transfer-list {
+.transfer-list-instructions {
+  margin-bottom: 2rem;
+  .columns {
+    display: grid;
+    @media (min-width: 700px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    gap: 1rem;
+  }
+  ol {
+    padding-left: 1rem;
+    color: var(--color-text-subtle);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  img {
+    width: 100%;
+    border-radius: 8px;
+  }
+}
+
+.transfer-list-challenge {
   background-color: var(--color-background-light);
   border: 1px solid var(--color-border);
-  border-radius: 0.5rem;
+  border-radius: 8px;
   padding: 1rem;
   .settings {
     display: flex;
@@ -39,7 +61,7 @@
   }
   ul {
     border: 1px solid var(--color-secondary-border);
-    border-radius: 0.25rem;
+    border-radius: 4px;
     padding: calc(var(--prem) * 2);
     display: flex;
     flex-direction: column;
@@ -57,7 +79,7 @@
   button {
     background-color: var(--color-secondary-border);
     padding: 1rem;
-    border-radius: 0.25rem;
+    border-radius: 4px;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -28,7 +28,7 @@ export default function Layout() {
 
   return (
     <>
-      <header ref={headerRef}>
+      <header ref={headerRef} className="main-header">
         <NavLink to="/">
           <Binary />
           React Interview Questions
@@ -46,7 +46,10 @@ export default function Layout() {
         </div>
       </header>
       <main>
-        <aside className={menuOpen ? "open" : ""} style={{ top: headerHeight }}>
+        <aside
+          className={`main-aside ${menuOpen ? "open" : ""}`}
+          style={{ top: headerHeight }}
+        >
           <h2>
             Challenges
             <button onClick={() => setMenuOpen(false)}>

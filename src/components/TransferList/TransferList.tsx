@@ -1,6 +1,7 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import ListItem from "./ListItem";
+import FoldingSection from "../FoldingSection";
 
 type Location = "LEFT" | "RIGHT";
 export type Item = {
@@ -17,7 +18,7 @@ export default function TransferList() {
   const [items, setItems] = useState<Item[]>(defaultItems);
   const [uncheckOnMove, setUncheckOnMove] = useState(false);
 
-  const handleButtonClick = (moveTo: Location) => {
+  const handleTransferButtonClick = (moveTo: Location) => {
     setItems(
       items.map((item) =>
         item.checked
@@ -46,8 +47,52 @@ export default function TransferList() {
   return (
     <article>
       <h1>Transfer List</h1>
+      <FoldingSection heading={<h2>Inspiration</h2>}>
+        <div className="transfer-list-inspiration">
+          <p>
+            I found this interview question via the YouTube video:{" "}
+            <a href="https://youtu.be/w0Kvt65Z2Uk" target="_blank">
+              Would you pass this React.js interview question at META?
+            </a>{" "}
+            made by <b>Web Dev Interviews</b>. A great video in which the author
+            manages to solve the challenge in just under 30 minutes.
+          </p>
+          <p>
+            My solution differs in a number of ways but most significantly in
+            the way I handle the state of the list items. I chose to only use
+            one array of items and let each keep track of it's own{" "}
+            <code>location</code>, <code>label</code> and whether or not it's
+            currently <code>checked</code>. I may also have taken some liberties
+            with the styling, can't help myself!
+          </p>
+        </div>
+      </FoldingSection>
+      <FoldingSection heading={<h2>Instructions</h2>}>
+        <div className="transfer-list-instructions">
+          <p>
+            Welcome to the META React JS interview. Your task is to build a
+            transfer list component. A transfer list allows users to pass items
+            from one list to another. UX has provided a simple{" "}
+            <span>mock up:</span>
+          </p>
+          <div className="columns">
+            <img src="/images/challenges/transfer-list.png" alt="" />
+            <ol>
+              <li>
+                The transfer list should consists of two lists with directional
+                actions buttons.
+              </li>
+              <li>
+                The user should be able to select one or multiple items and move
+                the item to the other list by clicking the action buttons.
+              </li>
+            </ol>
+          </div>
+        </div>
+      </FoldingSection>
 
-      <section className="transfer-list">
+      <h2>Implementation</h2>
+      <section className="transfer-list-challenge">
         <div className="settings">
           <label htmlFor="uncheck-on-move-toggle">Uncheck on transfer</label>
           <div>
@@ -81,10 +126,10 @@ export default function TransferList() {
             )}
           </ul>
           <div>
-            <button onClick={() => handleButtonClick("RIGHT")}>
+            <button onClick={() => handleTransferButtonClick("RIGHT")}>
               <ChevronRight />
             </button>
-            <button onClick={() => handleButtonClick("LEFT")}>
+            <button onClick={() => handleTransferButtonClick("LEFT")}>
               <ChevronLeft />
             </button>
           </div>

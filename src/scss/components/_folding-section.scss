@@ -1,0 +1,47 @@
+.folding-section {
+  .folding-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    transition: color var(--time-medium) var(--timing-function);
+    * {
+      margin: 0;
+    }
+    hr {
+      width: 100%;
+      color: inherit;
+      border: 1px solid;
+      opacity: 0.1;
+    }
+    svg {
+      transition: rotate var(--time-medium) var(--timing-function);
+    }
+  }
+  .folding-outer {
+    display: grid;
+    grid-template-rows: 1fr;
+    transition: grid-template-rows var(--time-medium) var(--timing-function);
+  }
+  .folding-inner {
+    overflow: hidden;
+    transition: opacity var(--time-medium) var(--timing-function);
+  }
+  // Styling when folded
+  &.folded {
+    .folding-header {
+      color: var(--color-text-subtle);
+      svg {
+        rotate: 180deg;
+      }
+    }
+    .folding-outer {
+      grid-template-rows: 0fr;
+    }
+    .folding-inner {
+      overflow: hidden;
+      opacity: 0;
+    }
+  }
+}
