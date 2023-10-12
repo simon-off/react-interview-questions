@@ -57,14 +57,6 @@ export default function TransferList() {
             made by <b>Web Dev Interviews</b>. A great video in which the author
             manages to solve the challenge in just under 30 minutes.
           </p>
-          <p>
-            My solution differs in a number of ways but most significantly in
-            the way I handle the state of the list items. I chose to only use
-            one array of items and let each keep track of it's own{" "}
-            <code>location</code>, <code>label</code> and whether or not it's
-            currently <code>checked</code>. I may also have taken some liberties
-            with the styling, can't help myself!
-          </p>
         </div>
       </FoldingSection>
       <FoldingSection heading={<h2>Instructions</h2>}>
@@ -91,50 +83,69 @@ export default function TransferList() {
         </div>
       </FoldingSection>
 
-      <h2>Implementation</h2>
-      <section className="transfer-list-challenge">
-        <div className="settings">
-          <label htmlFor="uncheck-on-move-toggle">Uncheck on transfer</label>
-          <div>
-            <span>{uncheckOnMove ? "on" : "off"}</span>
-            <label className="switch">
-              <input
-                id="uncheck-on-move-toggle"
-                type="checkbox"
-                checked={uncheckOnMove}
-                onChange={(e) => setUncheckOnMove(e.target.checked)}
-              />
-              <span className="slider round" />
-            </label>
+      <FoldingSection heading={<h2>Implementation</h2>}>
+        <p>
+          My solution differs from <b>Web Dev Interviews</b> version in a number
+          of ways, most significantly in how I handle the state of the list
+          items. I chose to only use one array of items and let each keep track
+          of it's own <code>label</code>, <code>location</code> and whether or
+          not it's currently <code>checked</code>. I may also have taken some
+          liberties with the styling, can't help myself!
+        </p>
+        <p>
+          Here's a demo of my solution. You can also check out the{" "}
+          <a
+            href="https://github.com/simon-off/react-interview-questions/tree/main/src/components/TransferList"
+            target="_blank"
+          >
+            code on GitHub
+          </a>{" "}
+          if you're curious!
+        </p>
+        <div className="transfer-list-challenge">
+          <div className="settings">
+            <label htmlFor="uncheck-on-move-toggle">Uncheck on transfer</label>
+            <div>
+              <span>{uncheckOnMove ? "on" : "off"}</span>
+              <label className="switch">
+                <input
+                  id="uncheck-on-move-toggle"
+                  type="checkbox"
+                  checked={uncheckOnMove}
+                  onChange={(e) => setUncheckOnMove(e.target.checked)}
+                />
+                <span className="slider round" />
+              </label>
+            </div>
+          </div>
+          <div className="game">
+            <ul>
+              {items.map(
+                (item, i) =>
+                  item.location === "LEFT" && (
+                    <ListItem key={i} item={item} handleCheck={handleCheck} />
+                  )
+              )}
+            </ul>
+            <ul>
+              {items.map(
+                (item, i) =>
+                  item.location === "RIGHT" && (
+                    <ListItem key={i} item={item} handleCheck={handleCheck} />
+                  )
+              )}
+            </ul>
+            <div>
+              <button onClick={() => handleTransferButtonClick("RIGHT")}>
+                <ChevronRight />
+              </button>
+              <button onClick={() => handleTransferButtonClick("LEFT")}>
+                <ChevronLeft />
+              </button>
+            </div>
           </div>
         </div>
-        <div className="game">
-          <ul>
-            {items.map(
-              (item, i) =>
-                item.location === "LEFT" && (
-                  <ListItem key={i} item={item} handleCheck={handleCheck} />
-                )
-            )}
-          </ul>
-          <ul>
-            {items.map(
-              (item, i) =>
-                item.location === "RIGHT" && (
-                  <ListItem key={i} item={item} handleCheck={handleCheck} />
-                )
-            )}
-          </ul>
-          <div>
-            <button onClick={() => handleTransferButtonClick("RIGHT")}>
-              <ChevronRight />
-            </button>
-            <button onClick={() => handleTransferButtonClick("LEFT")}>
-              <ChevronLeft />
-            </button>
-          </div>
-        </div>
-      </section>
+      </FoldingSection>
     </article>
   );
 }
