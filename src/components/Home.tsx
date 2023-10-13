@@ -20,7 +20,10 @@ export default function Home() {
       <p>
         If you want to dig into the code and see how I solved the challenges you
         can check out{" "}
-        <a href="https://github.com/simon-off/react-interview-questions">
+        <a
+          target="_blank"
+          href="https://github.com/simon-off/react-interview-questions"
+        >
           the repo over on GitHub
         </a>
         . It contains all the source code for the challenges as well as this
