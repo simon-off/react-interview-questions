@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--mb-heading);
     width: 100%;
     transition: color var(--time-medium) var(--timing-function);
     * {
@@ -27,6 +27,9 @@
   .folding-inner {
     overflow: hidden;
     transition: opacity var(--time-medium) var(--timing-function);
+    & > *:last-child {
+      margin-bottom: var(--mb-section);
+    }
   }
   // Styling when folded
   &.folded {

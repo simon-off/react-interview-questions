@@ -14,8 +14,14 @@
   --time-slow: 400ms;
 
   --timing-function: ease;
+
+  // SIZES
   --prem: 1rem;
   @media (max-width: 500px) {
     --prem: 0.75rem;
   }
+
+  --mb-paragraph: 1rem;
+  --mb-heading: 1.5rem;
+  --mb-section: 2.5rem;
 }
