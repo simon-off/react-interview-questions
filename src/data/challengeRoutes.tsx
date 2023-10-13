@@ -1,7 +1,7 @@
-import CountryGame from "../components/CountryGame/CountryGame";
+import CountryCapitalGame from "../components/CountryCapitalGame/CountryCapitalGame";
 import TransferList from "../components/TransferList/TransferList";
 
 export const challengeRoutes = [
-  { to: "/country-capital", text: "Country Capital", element: <CountryGame /> },
+  { to: "/country-capital", text: "Country Capital Game", element: <CountryCapitalGame /> },
   { to: "/transfer-list", text: "Transfer List", element: <TransferList /> },
 ];
