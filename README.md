@@ -4,20 +4,21 @@ A simple react app that contains multiple _react interview questions_ collected 
 
 ## 🖥️ Running the app locally
 
-Start by cloning this repo to your local machine:
+1. Make sure you have [Node.js](https://nodejs.org/) installed on your system
+2. Clone this repo to your local machine:
 
 ```sh
 $ git clone https://github.com/simon-off/react-interview-questions.git
 $ cd react-interview-questions
 ```
 
-Then run this to install all necessary dependencies:
+3. Install all the necessary packages:
 
 ```sh
 $ npm install
 ```
 
-Then simply start your local app instance by running!
+4. Start your local app instance:
 
 ```sh
 $ npm start
