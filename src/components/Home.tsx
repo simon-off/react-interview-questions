@@ -14,7 +14,7 @@ export default function Home() {
       <h2>Where's the good stuff?</h2>
       <p>
         In the navigation to the left you will find all the challenges. Each one
-        has it's own page with info of where I found it, instructions on how to
+        has its own page with info of where I found it, instructions on how to
         implement it and the result of my own implementation.
       </p>
       <p>
