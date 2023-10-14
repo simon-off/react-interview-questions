@@ -46,10 +46,7 @@ export default function Layout() {
         </div>
       </header>
       <main>
-        <aside
-          className={`main-aside ${menuOpen ? "open" : ""}`}
-          style={{ top: headerHeight }}
-        >
+        <aside className={`main-aside ${menuOpen ? "open" : ""}`} style={{ top: headerHeight }}>
           <h2>
             Challenges
             <button onClick={() => setMenuOpen(false)}>
@@ -58,11 +55,7 @@ export default function Layout() {
           </h2>
           <nav className="text-subtle">
             {challengeRoutes.map((link) => (
-              <NavLink
-                key={link.to}
-                to={link.to}
-                onClick={() => setMenuOpen(false)}
-              >
+              <NavLink key={link.to} to={link.to} onClick={() => setMenuOpen(false)}>
                 {link.text}
               </NavLink>
             ))}
@@ -70,9 +63,7 @@ export default function Layout() {
         </aside>
         <div
           onClick={() => setMenuOpen(false)}
-          className={`text-subtle container page-content ${
-            menuOpen ? "open" : ""
-          }`}
+          className={`text-subtle container page-content ${menuOpen ? "open" : ""}`}
         >
           <Outlet />
         </div>
