@@ -1,5 +1,5 @@
 .switch {
-  --width: 3rem;
+  --width: 2.75rem;
   --height: 1.5rem;
   --ball-margin: 4px;
 
@@ -28,7 +28,6 @@
     inset: 0;
     background-color: var(--color-secondary-border);
     transition: background-color var(--time-medium) var(--timing-function);
-    border-radius: var(--height);
 
     &::before {
       position: absolute;
@@ -37,7 +36,6 @@
       width: calc(var(--height) - var(--ball-margin) * 2);
       left: var(--ball-margin);
       top: var(--ball-margin);
-      border-radius: var(--height);
       background-color: white;
       transition: translate var(--time-medium) var(--timing-function);
     }

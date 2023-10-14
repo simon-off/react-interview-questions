@@ -37,8 +37,13 @@ h1 {
 }
 
 ul {
-  list-style: none;
-  padding: 0;
+  padding-left: 1rem;
+  color: var(--color-text-subtle);
+}
+
+ol {
+  padding-left: 1rem;
+  color: var(--color-text-subtle);
 }
 
 code {
@@ -46,8 +51,18 @@ code {
   font-size: 0.875em;
   line-height: normal;
   background-color: var(--color-border);
+  color: var(--color-text);
   padding: 0.125em 0.5em;
   border-radius: 0.25em;
+}
+
+blockquote {
+  background-color: var(--color-background-blue);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-blue);
+  padding: 1rem;
+  margin-bottom: var(--mb-paragraph);
+  font-style: italic;
 }
 
 button {

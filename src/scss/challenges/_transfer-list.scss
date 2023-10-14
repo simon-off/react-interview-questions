@@ -7,23 +7,20 @@
     }
     gap: 1rem;
   }
+  img {
+    width: 100%;
+    border-radius: 2px;
+  }
   ol {
-    padding-left: 1rem;
-    color: var(--color-text-subtle);
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
   }
-  img {
-    width: 100%;
-    border-radius: 8px;
-  }
 }
 
-.transfer-list-challenge {
-  background-color: var(--color-background-light);
+.transfer-list-implementation {
+  background-color: var(--color-background-blue);
   border: 1px solid var(--color-border);
-  border-radius: 8px;
   padding: 1rem;
   margin-bottom: var(--mb-paragraph);
   .settings {
@@ -62,11 +59,12 @@
   }
   ul {
     border: 1px solid var(--color-secondary-border);
-    border-radius: 4px;
+    padding-left: 0;
     padding: calc(var(--prem) * 2);
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+    list-style: none;
   }
   label {
     display: flex;
@@ -78,9 +76,9 @@
     width: 1rem;
   }
   button {
-    background-color: var(--color-secondary-border);
+    background-color: var(--color-secondary);
+    border: 1px solid var(--color-secondary-border);
     padding: 1rem;
-    border-radius: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
