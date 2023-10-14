@@ -1,11 +1,11 @@
 import { Item } from "./TransferList";
 
-type ListItemProps = {
+type TransferListItemProps = {
   item: Item;
   handleCheck: (item: Item, checked: boolean) => void;
 };
 
-export default function ListItem({ item, handleCheck }: ListItemProps) {
+export default function TransferListItem({ item, handleCheck }: TransferListItemProps) {
   return (
     <li>
       <label>
