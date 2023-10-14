@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./scss/main.scss";
+import "@fontsource-variable/sofia-sans";
+import "@fontsource-variable/sofia-sans/wght-italic.css";
 import Layout from "./components/Layout";
 import Home from "./components/Home";
 import { challengeRoutes } from "./data/challengeRoutes";
