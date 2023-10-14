@@ -71,10 +71,21 @@ export default function CountryCapitalGamePage() {
       </FoldingSection>
       <FoldingSection heading={<h2>Implementation</h2>}>
         <p>
-          A tricky thing with this challenge is the fact that the countries are the keys of the
-          object and the capitals are the values. To be able to click on the buttons in any order
-          you have to do add some conditions to check if you started with a country (key) or a
-          capital (value).
+          A tricky thing with this challenge is the fact that the countries are the keys of the data
+          object and the capitals are the values. To be able to click on the buttons in any order,
+          you have to do some finagling.
+        </p>
+        <p>
+          One way you can go about it is to add some conditional logic to check whether you clicked
+          on a key or a value first and then go from there. This requires no <i>massaging</i> of the
+          input data itself but can become quite complex with all the different conditions going on.
+        </p>
+        <p>
+          The way I solved it was to create a new array of objects with all the countries (keys) and
+          capitals (values) saved to a property (I chose to call mine <code>name</code>) on each new
+          object. Then you can add another property containing the corresponding <code>answer</code>{" "}
+          (either a capital or country). I also added a <code>state</code> property to keep track
+          each options current ui state.
         </p>
         <p>
           Here's a demo of my solution. You can also check out the{" "}
@@ -86,7 +97,9 @@ export default function CountryCapitalGamePage() {
           </a>{" "}
           if you're curious!
         </p>
-        <CountryCapitalGame />
+        <CountryCapitalGame
+          data={{ Germany: "Berlin", Azerbaijan: "Baku", France: "Paris", Sweden: "Stockholm" }}
+        />
       </FoldingSection>
     </article>
   );

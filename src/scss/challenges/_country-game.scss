@@ -13,3 +13,31 @@
     width: fit-content;
   }
 }
+
+.country-game-implementation {
+  background-color: var(--color-background-blue);
+  border: 1px solid var(--color-border);
+  padding: 1rem;
+  span {
+    display: block;
+    text-align: end;
+    margin-bottom: var(--mb-paragraph);
+  }
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    button {
+      flex-grow: 1;
+      background-color: var(--color-secondary);
+      border: 1px solid var(--color-secondary-border);
+      padding: 1rem;
+      &.selected {
+        background-color: hsl(203, 80%, 30%);
+      }
+      &.incorrect {
+        background-color: hsl(0, 80%, 30%);
+      }
+    }
+  }
+}
