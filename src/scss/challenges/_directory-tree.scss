@@ -1,2 +1,41 @@
-.directory-tree-instructions {
+.directory-tree-implementation {
+  background-color: var(--color-background-blue);
+  border: 1px solid var(--color-border);
+  padding: 1rem;
+  & > p {
+    padding: 0.5rem 1rem;
+    background-color: var(--color-secondary);
+    border: 1px solid var(--color-secondary-border);
+    color: var(--color-text);
+  }
+  & > ul {
+    padding: 0.5rem 0.5rem;
+    background-color: var(--color-secondary);
+    border: 1px solid var(--color-secondary-border);
+    resize: vertical;
+    overflow: auto;
+    height: 300px;
+  }
+  ul,
+  ol {
+    list-style: none;
+  }
+  button {
+    color: var(--color-text-blue);
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0 0.5rem;
+    width: 100%;
+    &:hover,
+    &:focus-visible {
+      color: var(--color-text);
+      background-color: var(--color-secondary-border);
+    }
+    svg {
+      width: 1em;
+      height: 1em;
+      color: var(--color-text);
+    }
+  }
 }
