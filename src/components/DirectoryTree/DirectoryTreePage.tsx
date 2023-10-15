@@ -48,7 +48,17 @@ export default function DirectoryTreePage() {
       </FoldingSection>
       <FoldingSection heading={<h2>Implementation</h2>}>
         <p>
-          Here's a demo of my solution. You can also check out the{" "}
+          My solution is very similar to the one <b>Web Dev Cody</b> shows in his video. The main
+          concept is that you have a component, <code>{"<DirectoryTreeNode/>"}</code> in my case,
+          and you render this by mapping over each node in the root of your <i>tree data object</i>{" "}
+          and passing the node's name & potential children as props. This component then maps over
+          its children (if it has any) and renders another instance of the{" "}
+          <code>{"<DirectoryTreeNode/>"}</code> while passing it the name & children properties just
+          like before. Pretty neat stuff!
+        </p>
+        <p>
+          Here's a demo of my solution. I added a <b>path</b> up top that updates when you click on
+          a directory or file. A very simple quality of life feature! You can check out the{" "}
           <a
             href="https://github.com/simon-off/react-interview-questions/tree/main/src/components/DirectoryTree"
             target="_blank"
