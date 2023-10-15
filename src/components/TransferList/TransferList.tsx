@@ -71,11 +71,11 @@ export default function TransferList() {
           )}
         </ul>
         <div>
-          <button onClick={() => handleTransferButtonClick("RIGHT")}>
-            <ChevronRight />
-          </button>
           <button onClick={() => handleTransferButtonClick("LEFT")}>
             <ChevronLeft />
+          </button>
+          <button onClick={() => handleTransferButtonClick("RIGHT")}>
+            <ChevronRight />
           </button>
         </div>
       </div>
