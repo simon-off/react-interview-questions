@@ -27,7 +27,7 @@ export default function CountryCapitalGamePage() {
             In this game, the player needs to match a country to its capital by clicking on
             appropriate buttons.
           </blockquote>
-          <ol>
+          <ol className="list-gap">
             <li>
               Your component should receive a data property in the following format (an object with
               the correct answers, where the keys are the names of the countries and the value of

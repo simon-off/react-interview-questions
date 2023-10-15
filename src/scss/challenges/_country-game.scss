@@ -1,12 +1,4 @@
 .country-game-instructions {
-  ol {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    ul {
-      list-style-type: square;
-    }
-  }
   br + code {
     margin-top: 0.5rem;
     display: block;

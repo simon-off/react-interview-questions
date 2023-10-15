@@ -26,7 +26,7 @@ export default function TransferListPage() {
           </p>
           <div className="columns">
             <img src="/images/challenges/transfer-list.png" alt="" />
-            <ol>
+            <ol className="list-gap">
               <li>
                 The transfer list should consists of two lists with directional actions buttons.
               </li>
