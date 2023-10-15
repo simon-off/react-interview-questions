@@ -4,8 +4,8 @@ export default function Home() {
       <h1>What is this site?</h1>
       <p>
         This site contains a collection of <b>React Interview Questions</b> I've collected from
-        various sources on the internet. I made it so that I could practice and learn more about
-        React and JavaScript in general.
+        various sources on the internet. I created it to practice and learn more about React and
+        JavaScript in general.
       </p>
       <p>
         If you're at a similar stage in your frontend developer journey, perhaps it can be useful to
