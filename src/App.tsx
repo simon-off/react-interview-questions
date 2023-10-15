@@ -4,7 +4,7 @@ import "@fontsource-variable/sofia-sans";
 import "@fontsource-variable/sofia-sans/wght-italic.css";
 import Layout from "./components/Layout";
 import Home from "./components/Home";
-import { challengeRoutes } from "./data/challengeRoutes";
+import { challengeRoutes } from "./components/ChallengeRoutes";
 
 function App() {
   return (

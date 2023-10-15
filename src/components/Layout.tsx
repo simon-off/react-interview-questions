@@ -2,7 +2,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import { Binary, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import useWindowResize from "../hooks/useWindowResize";
-import { challengeRoutes } from "../data/challengeRoutes";
+import { challengeRoutes } from "./ChallengeRoutes";
 
 export default function Layout() {
   const [menuOpen, setMenuOpen] = useState(false);
