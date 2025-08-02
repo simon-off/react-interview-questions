@@ -2,7 +2,7 @@
 
 A simple react app that contains multiple _react interview questions_ collected from various places on the world wide web. Each challenge has it's own page containing the chapters: `Inspiration, Instructions, Implementation`.
 
-Check it out: [React Interview Questions](https://react-interview-questions.netlify.app/)
+Check it out: [React Interview Questions](https://react.simonoff.se/)
 
 ## 🖥️ Running the app locally
 
